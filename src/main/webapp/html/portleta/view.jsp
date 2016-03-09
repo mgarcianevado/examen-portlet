@@ -7,8 +7,8 @@
 
 
 <form>
-<input type="submit" value="PortletB" formaction="urlPortletB" formmethod="post"/>
-<input type="submit" value="PortletC" formaction="urlPortletC" formmethod="post"/>
+<input type="submit" value="PortletB" formaction="irAPortletB" formmethod="post"/>
+<input type="submit" value="PortletC" formaction="irAPortletC" formmethod="post"/>
 	<div>NOMBRE: <input type="text" name="<%=PortletA.NOMBRE%>"/></div>
 	<div>DIRECCIÓN:<input type="text" name="<%=PortletA.DIRECCION%>"/></div>
 	<div>TELÉFONO:<input type="text" name="<%=PortletA.TELEFONO%>"/></div>
