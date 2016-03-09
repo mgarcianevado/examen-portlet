@@ -9,9 +9,21 @@
 
 
 Persona persona = (Persona)request.getAttribute("recibePersona");
-
+if (persona != null){
 %>
 
-	<div>NOMBRE: <input type="text" name="<%= persona.getNombre()%>"/></div>
-	<div>DIRECCIÓN:<input type="text" name="<%=persona.getDireccion()%>"/></div>
-	<div>TELÉFONO:<input type="text" name="<%=persona.getTelefono()%>"/></div>
+	<div>NOMBRE: <input type="text" value="<%= persona.getNombre()%>"/></div>
+	<div>DIRECCIÓN:<input type="text" value="<%=persona.getDireccion()%>"/></div>
+	<div>TELÉFONO:<input type="text" value="<%=persona.getTelefono()%>"/></div>
+
+	<%
+} else{
+	
+%>
+
+	<h3>Introduce tus datos en PortletA</h3>	
+
+<%
+
+}
+%>

@@ -1,10 +1,18 @@
 package com.examen.portlet.todos;
 
 import java.io.IOException;
+import java.io.Serializable;
 
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.Event;
+import javax.portlet.EventRequest;
+import javax.portlet.EventResponse;
 import javax.portlet.GenericPortlet;
 import javax.portlet.PortletException;
 import javax.portlet.PortletRequestDispatcher;
+import javax.portlet.ProcessAction;
+import javax.portlet.ProcessEvent;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
@@ -15,6 +23,14 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
  * Portlet implementation class PortletC
  */
 public class PortletC extends GenericPortlet {
+	
+	public static String NOMBRE = "nombre";
+	public static String DIRECCION = "direccion";
+	public static String TELEFONO = "telefono";
+	
+    protected String viewTemplate;
+
+    private static Log _log = LogFactoryUtil.getLog(PortletC.class);
 
     public void init() {
         viewTemplate = getInitParameter("view-template");
@@ -43,8 +59,16 @@ public class PortletC extends GenericPortlet {
         }
     }
  
-    protected String viewTemplate;
+    @ProcessEvent(name = "{http://examen.portlets.com}irAPortletC")
+    
+    public void recibirPortletA(EventRequest request, EventResponse response) throws PortletException, IOException {
+    	
+    	Event evento = request.getEvent();
+   	 Serializable recibePersona = evento.getValue();
+   	 request.setAttribute("recibePersona", recibePersona);
+    	
+    	
+    }
 
-    private static Log _log = LogFactoryUtil.getLog(PortletC.class);
 
 }
