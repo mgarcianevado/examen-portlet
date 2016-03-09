@@ -59,7 +59,7 @@ public class PortletC extends GenericPortlet {
         }
     }
  
-    @ProcessEvent(name = "{http://examen.portlets.com}irAPortletC")
+    @ProcessEvent(qname = "{http://examen.portlets.com}irAPortletC")
     
     public void recibirPortletA(EventRequest request, EventResponse response) throws PortletException, IOException {
     	

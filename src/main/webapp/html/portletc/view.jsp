@@ -6,22 +6,18 @@
 <h1>PORTLET C</h1>
 
 <%
+
+String nombre="";
+String direccion="";
+String telefono="";
 Persona persona = (Persona)request.getAttribute("recibePersona");
 if (persona != null){
-%>
-
-	<div>NOMBRE: <input type="text" value="<%= persona.getNombre()%>"/></div>
-	<div>DIRECCIÓN:<input type="text" value="<%=persona.getDireccion()%>"/></div>
-	<div>TELÉFONO:<input type="text" value="<%=persona.getTelefono()%>"/></div>
-
-	<%
-} else{
-	
-%>
-
-	<h3>Introduce tus datos en PortletA</h3>	
-
-<%
-
+	nombre =persona.getNombre();
+	direccion= persona.getDireccion();
+	telefono=persona.getTelefono();
 }
 %>
+
+	<div>NOMBRE: <input type="text" value="<%= nombre%>"/></div>
+	<div>DIRECCIÓN:<input type="text" value="<%=direccion%>"/></div>
+	<div>TELÉFONO:<input type="text" value="<%=telefono%>"/></div>

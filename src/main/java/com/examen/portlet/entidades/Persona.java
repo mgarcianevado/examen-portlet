@@ -10,10 +10,10 @@ public class Persona implements Serializable{
 
 	private String nombre;
 	private String direccion;
-	private int telefono;
+	private String telefono;
 	
 	
-	public Persona(String nombre, String direccion, int telefono) {
+	public Persona(String nombre, String direccion, String telefono) {
 		super();
 		this.nombre = nombre;
 		this.direccion = direccion;
@@ -44,12 +44,12 @@ public class Persona implements Serializable{
 	}
 
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
@@ -58,8 +58,8 @@ public class Persona implements Serializable{
 	public String toString() {
 		return "Persona [nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + "]";
 	}
-	
-	
+
+
 	
 	
 }
